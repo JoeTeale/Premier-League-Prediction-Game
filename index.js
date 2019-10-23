@@ -6,15 +6,30 @@ class user {
         this.score = score;
     }
 }
+function scoreSort(users) {
 
+/* place holder */
+
+}
 /* generate leaderboard */
-    function leaderBoardGenerator(user) {
+function leaderBoardGenerator(users, sortFlag) {
+
+if (sortFlag == 'Sorted') {
+
+    users.forEach(element => {
         let leaderBoard = document.getElementById("leaderBoard");
         let list = document.createElement('li'); 
-        leaderBoard.appendChild(list).innerHTML ='<h3>'+ user.name + " " + user.score + '</h3>';
-    }
+        leaderBoard.appendChild(list).innerHTML ='<h3>'+ element.name + " " + element.score + '</h3>';
+    });
+}
+
+   /*scoreSort(users)*/
+}
         
+let UserOne = new user ("Joe", 100);
+let UserTwo = new user ("Abi", 80);
+let UserThree = new user ("Geoff", 90);
 
-let UserJoe = new user ("Joe", 100);
+let users = [UserOne, UserTwo, UserThree];
 
-leaderBoardGenerator(UserJoe);
+leaderBoardGenerator(users, 'Sorted');
